@@ -1,0 +1,61 @@
+<app-layout></app-layout>
+<div class="container">
+  <p-card>
+    <h2>Add Course</h2>
+    <form (ngSubmit)="addCourse()">
+      <div class="form-field">
+        <p-floatlabel variant="in"  style="margin-bottom:2%">
+          <input pInputText id="name" [(ngModel)]="course.courseName" name="name" required/>
+          <label>Name</label>
+        </p-floatlabel>
+      </div>
+      <div class="form-field">
+        <p-floatlabel style="margin-bottom:2%">
+          <p-select
+            checkmark="true"
+            showClear="true"
+            [options]="classrooms"
+            [(ngModel)]="selectedClassroom"
+            name="classrooms"
+            optionLabel="classroomName"
+            placeholder="Select a classroom"
+            [style]="{'width':'207px'}">
+          </p-select>
+        </p-floatlabel>
+      </div>
+      <div style="margin-bottom: 2%">
+        <p-floatlabel>
+          <p-select
+            checkmark="true"
+            showClear="true"
+            [options]="departments"
+            [(ngModel)]="selectedDepartment"
+            name="department"
+            optionLabel="deptName"
+            placeholder="Select a department"
+            [style]="{'width':'207px'}">
+          </p-select>
+        </p-floatlabel>
+      </div>
+      <div  style="margin-bottom:2%">
+        <p-floatlabel>
+          <p-select
+            checkmark="true"
+            showClear="true"
+            [options]="instructors"
+            [(ngModel)]="selectedInstructor"
+            name="instructor"
+          optionLabel="firstName"
+          placeholder="Select a instructor"
+          [style]="{'width':'207px'}">
+          </p-select>
+        </p-floatlabel>
+      </div>
+      <p-toast/>
+      <p-button class="button" label="Add Course" type="submit"  severity="contrast" [rounded]="true" [raised]="true"></p-button>
+    </form>
+  </p-card>
+</div>
+
+
+

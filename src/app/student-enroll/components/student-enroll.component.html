@@ -1,0 +1,28 @@
+<app-layout></app-layout>
+<div class="container">
+
+  <p-card>
+    <h2>Enroll</h2>
+    <form (ngSubmit)="enroll()">
+        <div style="margin-bottom: 2%">
+        <p-floatlabel>
+          <p-select
+            checkmark="true"
+            showClear="true"
+            [options]="courses"
+            [(ngModel)]="selectedCourse"
+            name="courses"
+            optionLabel="courseName"
+            placeholder="Select a course"
+            [style]="{'width':'207px'}">
+          </p-select>
+        </p-floatlabel>
+      </div>
+      <p-toast/>
+      <p-button class="button" label="Enroll" type="submit"  severity="contrast" [rounded]="true" [raised]="true"></p-button>
+
+    </form>
+  </p-card>
+</div>
+
+

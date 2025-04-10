@@ -1,0 +1,100 @@
+<app-layout></app-layout>
+<div class="container">
+  <div class="col-md-6">
+    <div class="card p-4">
+      <p-card >
+        <h2>Add Instructor</h2>
+        <form (ngSubmit)="addInstructor()">
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <input pInputText id="sfirstName" [(ngModel)]="instructor.firstName" name="sfirstName" required/>
+              <label >First Name</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <input pInputText id="slastName" [(ngModel)]="instructor.lastName" name="slastName" required/>
+              <label >Last Name</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <input pInputText id="saddress" [(ngModel)]="instructor.address" name="saddress" required/>
+              <label>Address</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <p-datePicker [showButtonBar]="true" id="sbirthDate" [(ngModel)]="instructor.birthDate" [showIcon]="true" inputId="button2display" name="sbirthDate" [showOnFocus]="false" [style]="{'width':'207px'}"></p-datePicker>
+              <label>Birth Date</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <input pInputText id="semail" [(ngModel)]="instructor.email" name="semail" required/>
+              <label >Email</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel style="margin-bottom:4%">
+              <p-select
+                checkmark="true"
+                showClear="true"
+                [options]="genders"
+                [(ngModel)]="selectedInsGender"
+                name="gender"
+                placeholder="Select a gender"
+                [style]="{'width':'207px'}">
+              </p-select>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <input pInputText id="sphoneNumber" [(ngModel)]="instructor.phoneNumber" name="sphoneNumber" required/>
+              <label >Phone Number</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel variant="in">
+              <input pInputText id="spassword" [(ngModel)]="instructor.password" name="spassword" required/>
+              <label >Password</label>
+            </p-floatlabel>
+          </div>
+          <div class="form-field">
+            <p-floatlabel>
+              <p-select
+                checkmark="true"
+                showClear="true"
+                [options]="departments"
+                [(ngModel)]="selectedInsDepartment"
+                name="department"
+                optionLabel="deptName"
+                placeholder="Select a department"
+                [style]="{'width':'207px'}">
+              </p-select>
+            </p-floatlabel>
+          </div>
+          <div class="form-field" >
+            <p-floatlabel style="margin-bottom: 7%">
+              <p-select
+                checkmark="true"
+                showClear="true"
+                [options]="offices"
+                [(ngModel)]="selectedOffice"
+                name="office"
+                optionLabel="officeName"
+                placeholder="Select a office"
+                [style]="{'width':'207px'}">
+              </p-select>
+            </p-floatlabel>
+          </div>
+
+          <p-toast/>
+          <p-button class="button" label="Add Instructor" type="submit"  severity="contrast" [rounded]="true" [raised]="true"></p-button>
+
+        </form>
+      </p-card>
+    </div>
+  </div>
+</div>
+

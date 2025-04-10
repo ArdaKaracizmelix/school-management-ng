@@ -1,0 +1,93 @@
+<app-layout></app-layout>
+<div class="student-list">
+  <h2>Student List</h2>
+
+  <p-table [value]="students" class="p-database-striped"
+           showGridlines
+           stripedRows [tableStyle]="{'min-width': '50rem'}"
+           [paginator]="true"
+           [rows]="5"
+           dataKey="id"
+           [rowsPerPageOptions]="[5,10, 25, 50]"
+           [globalFilterFields]="['students.id', 'students.firstName', 'students.LastName', 'students.address',
+           'students.birthDate', 'students.email', 'students.gender', 'students.phoneNumber','students.deptName'
+           ]"
+           selectionMode="single" [(selection)]="selectedStudent"
+           [totalRecords]="totalRecords"
+           (onLazyLoad)="loadStudentLazy($event)"
+           [lazy]="true"
+  >
+
+    <ng-template pTemplate ="header">
+      <tr>
+        <th pSortableColumn="id">ID<p-sortIcon field="id"/></th>
+        <th pSortableColumn="firstName">First Name<p-sortIcon field="firstName"/></th>
+        <th pSortableColumn="lastName">Last Name<p-sortIcon field="lastName"/></th>
+        <th pSortableColumn="address">Address<p-sortIcon field="address"/></th>
+        <th pSortableColumn="birthDate">Birth Date<p-sortIcon field="birthDate"/></th>
+        <th pSortableColumn="email">Email<p-sortIcon field="email"/></th>
+        <th pSortableColumn="gender">Gender<p-sortIcon field="gender"/></th>
+        <th pSortableColumn="phoneNumber">Phone Number<p-sortIcon field="phoneNumber"/></th>
+        <th pSortableColumn="deptName">Department<p-sortIcon field="deptName"/></th>
+      </tr>
+
+      <tr>
+        <th>
+          <p-columnFilter  matchMode="equals" [showMenu]="false" type="text" field="id" placeholder="Search by id" ariaLabel="Filter id"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter  matchMode="contains" [showMenu]="false" type="text" field="firstName" placeholder="Search by first name" ariaLabel="Filter firstName"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" [showMenu]="false" field="lastName" placeholder="Search by last name" ariaLabel="Filter lastName"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" field="address" [showMenu]="false" placeholder="Search by address" ariaLabel="Filter address"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" field="birthDate" [showMenu]="false" placeholder="Search by birth date" ariaLabel="Filter birthDate"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" field="email" [showMenu]="false" placeholder="Search by email" ariaLabel="Filter email"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" field="gender" [showMenu]="false" placeholder="Search by gender" ariaLabel="Filter gender"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" field="phoneNumber" [showMenu]="false" placeholder="Search by phone number" ariaLabel="Filter phoneNumber"></p-columnFilter>
+        </th>
+        <th>
+
+          <p-columnFilter matchMode="contains" type="text" field="deptName" [showMenu]="false" placeholder="Search by department" ariaLabel="Filter deptName"></p-columnFilter>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-students>
+      <tr [pSelectableRow]="students" (click)="onSelectRow(selectedStudent)" class="denemeee">
+        <td>{{ students.id }}</td>
+        <td>{{ students.firstName }}</td>
+        <td>{{ students.lastName }}</td>
+        <td>{{ students.address }}</td>
+        <td>{{ students.birthDate }}</td>
+        <td>{{ students.email }}</td>
+        <td>{{ students.gender }}</td>
+        <td>{{ students.phoneNumber }}</td>
+        <td>{{ students.deptName }}</td>
+      </tr>
+
+    </ng-template>
+  </p-table>
+
+
+  <p-button label="Add Student" icon="pi pi-plus " class ="buttonadd-container" severity="contrast" (onClick)="onAddStudent()"/>
+  <p-toast/>
+  <p-confirm-dialog/>
+  <p-button label="Delete Selected Student" icon="pi pi-trash" class ="buttondelete-container" severity="contrast" (onClick)="onDeleteStudent()"/>
+</div>

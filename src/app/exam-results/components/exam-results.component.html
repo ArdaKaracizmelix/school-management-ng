@@ -1,0 +1,23 @@
+<div>
+  <h3>Exam Results</h3>
+  <p-table [value]="examResults" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,20,30]" [totalRecords]="examResults.length" >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Exam Type</th>
+        <th>Score</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-result>
+      <tr [pSelectableRow]="result">
+        <td>{{result?.exam?.examType}}</td>
+        <td>{{result?.score}}</td>
+      </tr>
+
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td [attr.colspan]="2">Kayıt Bulunamadı</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

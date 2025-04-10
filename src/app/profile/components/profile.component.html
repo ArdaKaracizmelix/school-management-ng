@@ -1,0 +1,90 @@
+<app-layout></app-layout>
+<div class="profile">
+    <p-card class="profile-card">
+        <ng-template pTemplate="header">
+            <div class="profile-header">
+                <p-avatar icon="pi pi-user" size="large" shape="circle"></p-avatar>
+                <h2>{{ user.firstName}}  {{user.middleName}} {{user.lastName}} </h2>
+
+            </div>
+        </ng-template>
+        <ng-template  pTemplate="content">
+            <div class="profile-info" *ngIf="role ==='STUDENT'"   >
+                <p>
+                    <strong>Email:</strong> {{user.email}}
+                </p>
+                <p>
+                    <strong>Gender:</strong> {{user.gender}}
+                </p>
+                <p>
+                    <strong>Address:</strong> {{user.address}}
+                </p>
+                <p>
+                    <strong>Phone Number:</strong> {{user.phoneNumber}}
+                </p>
+                <p>
+                    <strong>Department Name:</strong> {{user.deptName}}
+                </p>
+                <p>
+                    <strong>Birth Date:</strong> {{user.birthDate}}
+                </p>
+                <p>
+                    <strong>Role</strong> {{role}}
+                </p>
+
+            </div>
+            <div class="profile-info" *ngIf="role ==='INSTRUCTOR'"   >
+                <p>
+                    <strong>Email:</strong> {{user.email}}
+                </p>
+                <p>
+                    <strong>Gender:</strong> {{user.gender}}
+                </p>
+                <p>
+                    <strong>Address:</strong> {{user.address}}
+                </p>
+                <p>
+                    <strong>Phone Number:</strong> {{user.phoneNumber}}
+                </p>
+                <p>
+                    <strong>Department Name:</strong> {{user.deptName}}
+                </p>
+                <p>
+                    <strong>Birth Date:</strong> {{user.birthDate}}
+                </p>
+                <p>
+                    <strong>Office:</strong> {{officeName}}
+                </p>
+                <p>
+                    <strong>Role</strong> {{role}}
+                </p>
+            </div>
+          <div class="profile-info" *ngIf="role ==='DEAN'"   >
+            <p>
+              <strong>Email:</strong> {{user.email}}
+            </p>
+            <p>
+              <strong>Gender:</strong> {{user.gender}}
+            </p>
+            <p>
+              <strong>Address:</strong> {{user.address}}
+            </p>
+            <p>
+              <strong>Phone Number:</strong> {{user.phoneNumber}}
+            </p>
+            <p>
+              <strong>Department Name:</strong> {{user.deptName}}
+            </p>
+            <p>
+              <strong>Birth Date:</strong> {{user.birthDate}}
+            </p>
+            <p>
+              <strong>Office:</strong> {{officeName}}
+            </p>
+            <p>
+              <strong>Role</strong> {{role}}
+            </p>
+        </div>
+        </ng-template>
+    </p-card>
+</div>

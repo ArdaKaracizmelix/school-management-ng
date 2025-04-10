@@ -1,0 +1,80 @@
+<app-layout></app-layout>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="form-wrapper">
+        <p-card class="col-3">
+          <h2>Add Student</h2>
+          <form (ngSubmit)="addStudent()">
+
+            <div class="form-field">
+              <label for="firstName">First Name</label>
+              <input pInputText id="firstName" [(ngModel)]="student.firstName" name="firstName" required />
+            </div>
+
+            <div class="form-field">
+              <label for="lastName">Last Name</label>
+              <input pInputText id="lastName" [(ngModel)]="student.lastName" name="lastName" required />
+            </div>
+
+            <div class="form-field">
+              <label for="address">Address</label>
+              <input pInputText id="address" [(ngModel)]="student.address" name="address" required />
+            </div>
+
+            <div class="form-field" >
+              <label for="birthDate">Birth Date</label>
+              <p-date-picker [showButtonBar]="true" id="birthDate" [(ngModel)]="student.birthDate" [showIcon]="true" inputId="buttondisplay" name="birthDate" [showOnFocus]="false" />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input pInputText id="email" [(ngModel)]="student.email" name="email" required />
+            </div>
+
+            <div class="form-field">
+              <label>Gender</label>
+              <p-select
+                checkmark="true"
+                showClear="true"
+                [options]="genders"
+                [(ngModel)]="selectedGender"
+                name="gender"
+                placeholder="Select a gender">
+              </p-select>
+            </div>
+
+            <div class="form-field">
+              <label for="phoneNumber">Phone Number</label>
+              <input pInputText id="phoneNumber" [(ngModel)]="student.phoneNumber" name="phoneNumber" required />
+            </div>
+
+            <div class="form-field">
+              <label for="password">Password</label>
+              <input pInputText id="password" [(ngModel)]="student.password" name="password" required />
+            </div>
+
+            <div class="form-field">
+              <label >Department</label>
+              <p-select
+                checkmark="true"
+                showClear="true"
+                [options]="departments"
+                [(ngModel)]="selectedDepartment"
+                name="department"
+                optionLabel="deptName"
+                placeholder="Select a department">
+              </p-select>
+            </div>
+
+            <div class="button-container">
+              <p-toast/>
+              <p-button label="Add Student" type="submit" severity="contrast" [rounded]="true" [raised]="true"></p-button>
+            </div>
+
+          </form>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

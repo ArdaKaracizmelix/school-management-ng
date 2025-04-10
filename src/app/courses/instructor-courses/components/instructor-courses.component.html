@@ -1,0 +1,45 @@
+<app-layout></app-layout>
+<div class="course-container">
+  <h2>My Courses</h2>
+
+  <p-table [value]="courses" responsiveLayout="scroll" selectionMode="single"  [(selection)]="selectedCourse" (onRowSelect)="onSelectRow($event.data)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Course Name</th>
+        <th>Department</th>
+        <th>Classroom</th>
+      </tr>
+
+      <ng-template #body let-course>
+      <tr [pSelectableRow]="course" (click)="onSelectRow(selectedCourse)" class="denemeee">
+          <td>{{ course.courseName}}</td>
+          <td>{{ course.department.deptName}}</td>
+          <td>{{ course.classroom.classroomName}}</td>
+      </tr>
+      </ng-template>
+    </ng-template>
+  </p-table>
+  <p-button label="Add Exam" icon="pi pi-plus " class ="buttonadd-container" severity="contrast" (onClick)="onAddExam()"/>
+    <div [hidden]="!selectedCourse.id">
+      <app-grade #gradeComponent [selectedCourseId]="selectedCourse.id"></app-grade>
+    </div>
+  <p-dialog [(visible)]="gradeComponent.gradeDialogVisible" [modal]="true" header="Grades" [style]="{width:'50vw'}">
+    <p-table [value]="gradeComponent.examResults">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Exam Type</th>
+          <th>Score</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-results>
+        <tr>
+          <td>{{results.exam.examType}}</td>
+          <p-inputnumber styleClass="grade-input" [(ngModel)]="results.score" inputId="minmax" mode="decimal" [min]="0" [max]="100" [style]="{width :'20px',height:'20px'}"></p-inputnumber>
+          <p-toast/>
+          <p-button  severity="contrast" pButtonLabel="Save" icon="pi pi-check" (click)="saveGrades(results.id,results.score)" [style]="{margin :'20px'}" ></p-button>
+        </tr>
+      </ng-template>
+    </p-table>
+   <p-button pButtonLabel="Cancel" icon="pi pi-times" (click)="gradeComponent.gradeDialogVisible=false"></p-button>
+  </p-dialog>
+</div>

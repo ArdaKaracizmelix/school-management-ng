@@ -1,0 +1,44 @@
+<app-layout></app-layout>
+<div class="container">
+
+  <p-card>
+    <h2>Add Exam</h2>
+    <form (ngSubmit)="addExam()">
+    <div class="form-field">
+        <p-floatlabel style="margin-bottom:2%">
+          <p-select
+            checkmark="true"
+            showClear="true"
+            [options]="examTypes"
+            [(ngModel)]="selectedExamType"
+            name="examType"
+
+            placeholder="Select a exam type"
+            [style]="{'width':'207px'}">
+          </p-select>
+        </p-floatlabel>
+      </div>
+
+      <div style="margin-bottom: 2%">
+        <p-floatlabel>
+          <p-select
+            checkmark="true"
+            showClear="true"
+            [options]="courses"
+            [(ngModel)]="selectedCourse"
+            name="course"
+            optionLabel="courseName"
+            placeholder="Select a course"
+            [style]="{'width':'207px'}">
+          </p-select>
+        </p-floatlabel>
+      </div>
+      <p-toast/>
+      <p-button class="button" label="Add Exam" type="submit"  severity="contrast" [rounded]="true" [raised]="true"></p-button>
+
+    </form>
+  </p-card>
+</div>
+
+
+

@@ -1,0 +1,41 @@
+<p-drawer [(visible)]="visibleSidebar" styleClass="!w-full md:!w-80 lg:!w-[1230rem]">
+
+  <h3>Navigation</h3>
+  <div *ngIf="role==='STUDENT'" >
+  <ul class="menu">
+    <li (click)="onHome()"><i class="pi pi-home" style="font-size: 1.3rem"  ></i> Home</li>
+    <li (click)="onProfile()"><i class="pi pi-user" style="font-size: 1.3rem"></i> Profile</li>
+    <li (click)="onStudentCourse()"><i class="pi pi-book" style="font-size: 1.3rem" ></i> Student Courses</li>
+    <li (click)="onStudentEnroll()"><i class="pi pi-user-edit" style="font-size: 1.3rem"></i> Student Enroll</li>
+    <li (click)="onLogout()"><i class="pi pi-sign-out" style="font-size: 1.3rem"></i> Logout</li>
+  </ul>
+  </div>
+  <div *ngIf="role==='INSTRUCTOR'" >
+    <ul class="menu">
+      <li (click)="onHome()"><i class="pi pi-home" style="font-size: 1.3rem"  ></i> Home</li>
+      <li (click)="onProfile()"><i class="pi pi-user" style="font-size: 1.3rem"></i> Profile</li>
+      <li (click)="onInstructorCourse()"><i class="pi pi-book" style="font-size: 1.3rem" ></i> Instructor Courses</li>
+      <li (click)="onLogout()"><i class="pi pi-sign-out" style="font-size: 1.3rem"></i> Logout</li>
+    </ul>
+  </div>
+  <div *ngIf="role==='DEAN'" >
+    <ul class="menu">
+      <li (click)="onHome()"><i class="pi pi-home" style="font-size: 1.3rem"  ></i> Home</li>
+      <li (click)="onProfile()"><i class="pi pi-user" style="font-size: 1.3rem"></i> Profile</li>
+      <li (click)="onDeanCourse()"><i class="pi pi-book" style="font-size: 1.3rem" ></i> Dean Courses</li>
+      <li (click)="onStudentList()"><i class="pi pi-list" style="font-size: 1.3rem"></i> Student List</li>
+      <li (click)="onInstructorList()"><i class="pi pi-list" style="font-size: 1.3rem"></i> Instructor List</li>
+      <li (click)="onLogout()"><i class="pi pi-sign-out" style="font-size: 1.3rem"></i> Logout</li>
+    </ul>
+  </div>
+</p-drawer>
+
+<p-toolbar>
+  <div class ="p-toolbar-group-left">
+    <p-button  label="Menu" icon="pi pi-bars" (click)="visibleSidebar = true" severity="contrast" [rounded]="true"></p-button>
+    <span class="title"></span>
+  </div>
+  <div class ="p-toolbar-group-right">
+    <p-button class="logout_btn" icon="pi pi-sign-out" label="Logout" severity="contrast"  (onClick)="onLogout()" [rounded]="true" [raised]="true"></p-button>
+  </div>
+</p-toolbar>

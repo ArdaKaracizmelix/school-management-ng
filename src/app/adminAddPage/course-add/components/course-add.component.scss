@@ -1,0 +1,53 @@
+.student-form-container {
+  max-width: 300px;
+  margin-left: 400px;
+  margin-top:50px;
+  display: flex;
+  justify-content: space-around;
+  gap:600px;
+
+}
+.form-field{
+  margin-bottom: 18px;
+
+}
+.form-actions {
+  display: flex;
+  justify-content: center;
+
+}
+
+select {
+  max-width: 400px;
+}
+
+.container {
+  margin-top: 20px;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 120px 0 rgba(0, 0, 0, 0.19);
+  //width:400px
+}
+::ng-deep .p-datepicker table td > span {
+  background-color: #000000;
+  color: #e9ecef;
+}
+
+::ng-deep .p-datepicker-today-button {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+::ng-deep .p-datepicker-clear-button {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+::ng-deep .p-datepicker-prev-button {
+  color: #000000;
+  //  border-color: #000000 !important;
+}
+::ng-deep .p-datepicker-next-button {
+  color: #000000;
+  //  border-color: #000000 !important;
+}

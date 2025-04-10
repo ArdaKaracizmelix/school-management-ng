@@ -1,0 +1,26 @@
+<app-layout></app-layout>
+<div class="course-container">
+    <h2>My Courses</h2>
+    <p-table [value]="courses" responsiveLayout="scroll" selectionMode="single" [(selection)]="selectedCourse" (onRowSelect)="onSelectRow($event.data)">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Course Name</th>
+                <th>Department</th>
+                <th>Instructor</th>
+                <th>Classroom</th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-course>
+          <tr [pSelectableRow]="course" (click)="onSelectRow(selectedCourse)" class="denemeee">
+                <td>{{ course.courseName}}</td>
+                <td>{{ course.department.deptName}}</td>
+                <td>{{course.instructor.firstName }} {{course.instructor.middleName }} {{course.instructor.lastName }} </td>
+                <td>{{ course.classroom.classroomName}}</td>
+           </tr>
+        </ng-template>
+    </p-table>
+  <div [hidden]="!selectedCourse.id">
+    <app-exam-results #examResultsComponent></app-exam-results>
+  </div>
+
+</div>

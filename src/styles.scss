@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+.p-drawer {
+  background-color: #000000 !important;
+  color: #e9ecef !important;
+  width: 250px !important;
+  border-radius: 15px !important;
+  padding: 2px 2px 2px 2px !important;
+  border: none !important;
+
+
+}
+
+.p-toolbar {
+  background-color: #000000 !important;
+  color: #e9ecef !important;
+  border-radius: 3rem !important;
+  padding: 1rem 1rem 1rem 1.5rem !important;
+
+}
+.p-button:hover {
+  background-color: #e9ecef !important;
+  color: #000000 !important;
+}

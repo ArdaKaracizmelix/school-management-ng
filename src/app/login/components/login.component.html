@@ -1,0 +1,17 @@
+<div>
+  <p-card  class="card-container" [style]="{ width: '25rem', overflow: 'hidden'}">
+    <form (ngSubmit)="onEnter()">
+     <ng-template #title> School Management System </ng-template>
+      <p-iftalabel class = "username-container">
+        <input pInputText id="username" [(ngModel)]="username" autocomplete="on" variant="filled" type="text" required="true" name="username"/>
+        <label for="username">Username</label>
+      </p-iftalabel>
+      <p-iftalabel class = "password-container">
+        <input pInputText id="password" [(ngModel)]="password" name="password" autocomplete="off" variant="filled" type="password" required="true"/>
+        <label for="password">Password</label>
+      </p-iftalabel>
+      <p-toast/>
+    <p-button label="Login" class ="button-container" severity="contrast" type="ngSubmit"/>
+    </form>
+  </p-card>
+</div>

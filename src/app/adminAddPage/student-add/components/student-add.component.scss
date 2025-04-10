@@ -1,0 +1,50 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Elemanları dikey olarak ortala */
+}
+
+.form-field {
+  width: 100%; /* Form alanlarının genişliği %100 */
+  margin-bottom: 20px; /* Alanlar arası boşluk */
+}
+
+.form-field label {
+  display: block; /* Etiketleri blok olarak ayarla */
+  margin-bottom: 5px; /* Etiket ile input arasındaki boşluk */
+  text-align: center; /* Etiketin ortalanması */
+}
+
+input, p-select {
+  width: 100%; /* Input ve select'in genişliğini %100 yap */
+  text-align: center; /* İçerik ortalaması */
+}
+
+.button-container {
+  text-align: center; /* Butonu ortala */
+}
+
+
+::ng-deep .p-datepicker table td > span {
+  background-color: #000000;
+  color: #e9ecef;
+}
+
+::ng-deep .p-datepicker-today-button {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+::ng-deep .p-datepicker-clear-button {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+::ng-deep .p-datepicker-prev-button {
+  color: #000000;
+  //  border-color: #000000 !important;
+}
+::ng-deep .p-datepicker-next-button {
+  color: #000000;
+  //  border-color: #000000 !important;
+}
+
+

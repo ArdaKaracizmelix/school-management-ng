@@ -1,0 +1,28 @@
+.username {
+  margin-top: 20px;
+}
+.password-container {
+  margin-top: 20px;
+}
+.button-container {
+  position: relative;
+  top: 15px;
+
+}
+.card-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  padding: 0;
+
+
+}
+p-card {
+  padding: 0 !important;
+
+}
+::ng-deep .p-ifta-label{
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
